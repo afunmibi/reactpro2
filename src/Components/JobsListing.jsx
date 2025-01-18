@@ -35,13 +35,17 @@ const JobsListing = ({isHome =false}) => {
         {isHome ? 'Recent Jobs' : 'Browse Jobs'}
 
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {loading ? <Spinner loading={loading} />: (<>{jobs.map(job=>(
+      
+        {loading ? <Spinner loading={loading} />: (
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {jobs.map(job=>(
            <Joblisting key={job.id} job={job}/>
-        ))} </> )}
+        ))}  </div> 
+        )}
         
        
-      </div>
+     
     </div>
   </section></div>
   )
